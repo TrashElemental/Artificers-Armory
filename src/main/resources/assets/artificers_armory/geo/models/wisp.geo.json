@@ -1,0 +1,70 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.unknown",
+				"texture_width": 32,
+				"texture_height": 32,
+				"visible_bounds_width": 2,
+				"visible_bounds_height": 1.5,
+				"visible_bounds_offset": [0, 0.25, 0]
+			},
+			"bones": [
+				{
+					"name": "wisp",
+					"pivot": [0.75, -0.25, -0.75]
+				},
+				{
+					"name": "body",
+					"parent": "wisp",
+					"pivot": [0.75, 1.75, -0.75],
+					"cubes": [
+						{"origin": [-2.5, 1.75, -2.5], "size": [5, 5, 5], "uv": [0, 0]}
+					]
+				},
+				{
+					"name": "trails",
+					"parent": "wisp",
+					"pivot": [0.75, -0.25, -0.75]
+				},
+				{
+					"name": "front",
+					"parent": "trails",
+					"pivot": [0, 1.75, -2.5],
+					"rotation": [-40, 0, 0],
+					"cubes": [
+						{"origin": [-2, -0.25, -2.5], "size": [4, 2, 0], "uv": [0, 13]}
+					]
+				},
+				{
+					"name": "back",
+					"parent": "trails",
+					"pivot": [0.25, 1.75, 2.25],
+					"rotation": [40, 0, 0],
+					"cubes": [
+						{"origin": [-2, -0.25, 2.5], "size": [4, 2, 0], "uv": [0, 13]}
+					]
+				},
+				{
+					"name": "left",
+					"parent": "trails",
+					"pivot": [2.25, 1.75, 0],
+					"rotation": [0, 0, -37.5],
+					"cubes": [
+						{"origin": [2.5, -0.25, -2], "size": [0, 2, 4], "uv": [0, 9]}
+					]
+				},
+				{
+					"name": "right",
+					"parent": "trails",
+					"pivot": [-2.25, 1.75, -0.25],
+					"rotation": [0, 0, 40],
+					"cubes": [
+						{"origin": [-2.5, -0.25, -2], "size": [0, 2, 4], "uv": [0, 9]}
+					]
+				}
+			]
+		}
+	]
+}
