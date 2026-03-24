@@ -1,0 +1,48 @@
+{
+  "values": [
+    {
+      "id": "artificers_armory:protector",
+      "required": false
+    },
+    {
+      "id": "artificers_armory:healer",
+      "required": false
+    },
+    {
+      "id": "artificers_armory:prankster",
+      "required": false
+    },
+    {
+      "id": "artificers_armory:bruiser",
+      "required": false
+    },
+    {
+      "id": "minecraft:power",
+      "required": false
+    },
+    {
+      "id": "minecraft:protection",
+      "required": false
+    },
+    {
+      "id": "minecraft:fortune",
+      "required": false
+    },
+    {
+      "id": "minecraft:silk_touch",
+      "required": false
+    },
+    {
+      "id": "minecraft:infinity",
+      "required": false
+    },
+    {
+      "id": "minecraft:mending",
+      "required": false
+    },
+    {
+      "id": "minecraft:unbreaking",
+      "required": false
+    }
+  ]
+}

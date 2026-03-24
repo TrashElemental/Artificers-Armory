@@ -1,0 +1,40 @@
+{
+  "values": [
+    {
+      "id": "artificers_armory:charge_blast",
+      "required": false
+    },
+    {
+      "id": "artificers_armory:flamethrower",
+      "required": false
+    },
+    {
+      "id": "artificers_armory:warming_light",
+      "required": false
+    },
+    {
+      "id": "artificers_armory:soul_blaze",
+      "required": false
+    },
+    {
+      "id": "minecraft:power",
+      "required": false
+    },
+    {
+      "id": "minecraft:fire_aspect",
+      "required": false
+    },
+    {
+      "id": "minecraft:flame",
+      "required": false
+    },
+    {
+      "id": "minecraft:mending",
+      "required": false
+    },
+    {
+      "id": "minecraft:unbreaking",
+      "required": false
+    }
+  ]
+}

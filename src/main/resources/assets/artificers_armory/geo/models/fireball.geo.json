@@ -1,0 +1,37 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.unknown",
+				"texture_width": 32,
+				"texture_height": 32,
+				"visible_bounds_width": 2,
+				"visible_bounds_height": 2.5,
+				"visible_bounds_offset": [0, 0.75, 0]
+			},
+			"bones": [
+				{
+					"name": "fireball",
+					"pivot": [0, 3.5, 0]
+				},
+				{
+					"name": "cube",
+					"parent": "fireball",
+					"pivot": [0, 3.5, 0],
+					"cubes": [
+						{"origin": [-2.5, 1, -2.5], "size": [5, 5, 5], "uv": [0, 0]}
+					]
+				},
+				{
+					"name": "trails",
+					"parent": "fireball",
+					"pivot": [0, 3.5, 0],
+					"cubes": [
+						{"origin": [-3, 0, -3], "size": [6, 6, 7], "uv": [3, 16]}
+					]
+				}
+			]
+		}
+	]
+}

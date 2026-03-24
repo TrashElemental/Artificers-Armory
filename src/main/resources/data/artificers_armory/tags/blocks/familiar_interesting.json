@@ -1,0 +1,28 @@
+{
+  "replace": false,
+  "values": [
+    "#minecraft:flowers",
+    "#minecraft:flower_pots",
+    "#minecraft:beehives",
+    "minecraft:crafting_table",
+    "minecraft:furnace",
+    "minecraft:enchanting_table",
+    "minecraft:smoker",
+    "minecraft:blast_furnace",
+    "minecraft:fletching_table",
+    "minecraft:cartography_table",
+    "minecraft:loom",
+    "minecraft:smithing_table",
+    "minecraft:lectern",
+    "minecraft:barrel",
+    "minecraft:chest",
+    "#minecraft:all_signs",
+    "minecraft:stonecutter",
+    "minecraft:composter",
+    "minecraft:cauldron",
+    "minecraft:brewing_stand",
+    "minecraft:anvil",
+    "minecraft:bookshelf",
+    "minecraft:amethyst_cluster"
+  ]
+}

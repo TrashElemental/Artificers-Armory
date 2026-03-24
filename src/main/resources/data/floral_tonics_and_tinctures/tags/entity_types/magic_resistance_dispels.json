@@ -1,0 +1,12 @@
+{
+  "replace": false,
+  "values": [
+    "artificers_armory:zombie_minion",
+    "artificers_armory:drowned_minion",
+    "artificers_armory:skeleton_minion",
+    "artificers_armory:stray_minion",
+    "artificers_armory:wither_skeleton_minion",
+    "artificers_armory:fireball",
+    "artificers_armory:familiar"
+  ]
+}

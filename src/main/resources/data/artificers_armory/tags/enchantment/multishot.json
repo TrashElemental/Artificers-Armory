@@ -1,0 +1,24 @@
+{
+  "values": [
+    {
+      "id": "minecraft:multishot",
+      "required": false
+    },
+    {
+      "id": "magiccombatwands:thrifty",
+      "required": false
+    },
+    {
+      "id": "apotheosis:crescendo",
+      "required": false
+    },
+    {
+      "id": "apotheosis:endless_quiver",
+      "required": false
+    },
+    {
+      "id": "apotheosis:splitting",
+      "required": false
+    }
+  ]
+}
