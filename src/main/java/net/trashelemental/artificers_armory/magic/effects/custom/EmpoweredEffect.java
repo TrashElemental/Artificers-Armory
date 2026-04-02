@@ -9,7 +9,7 @@ import net.trashelemental.artificers_armory.ArtificersArmory;
 
 public class EmpoweredEffect extends MobEffect {
     public EmpoweredEffect() {
-        super(MobEffectCategory.BENEFICIAL, 14588946);
+        super(MobEffectCategory.BENEFICIAL, 4125138);
 
         this.addAttributeModifier(
                 Attributes.ATTACK_DAMAGE,

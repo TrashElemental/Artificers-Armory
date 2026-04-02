@@ -1,20 +1,25 @@
 package net.trashelemental.artificers_armory.magic.effects.custom;
 
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectCategory;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
-import net.trashelemental.artificers_armory.ArtificersArmory;
 
-public class TeamworkEffect extends MobEffect {
-    public TeamworkEffect() {
-        super(MobEffectCategory.BENEFICIAL, 14588946);
+public class BlessingEffect extends MobEffect {
+    public BlessingEffect() {
+        super(MobEffectCategory.BENEFICIAL, 5832603);
 
         this.addAttributeModifier(
                 Attributes.ATTACK_DAMAGE,
                 "3aaea4cb-d524-4bc2-b25e-9b3a47801e7d",
                 0.15D,
+                AttributeModifier.Operation.MULTIPLY_TOTAL
+        );
+        this.addAttributeModifier(
+                Attributes.MOVEMENT_SPEED,
+                "3aaea4cb-d524-4bc2-b25e-9b3a47801e7d",
+                0.05D,
                 AttributeModifier.Operation.MULTIPLY_TOTAL
         );
         this.addAttributeModifier(
@@ -29,6 +34,16 @@ public class TeamworkEffect extends MobEffect {
                 1,
                 AttributeModifier.Operation.ADDITION
         );
+    }
+
+    @Override
+    public void applyEffectTick(LivingEntity entity, int amplifier) {
+        entity.heal(amplifier);
+    }
+
+    @Override
+    public boolean isDurationEffectTick(int duration, int amplifier) {
+        return duration % 40 == 0;
     }
 
     @Override

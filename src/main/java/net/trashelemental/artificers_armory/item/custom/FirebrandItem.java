@@ -4,7 +4,10 @@ import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
 import net.minecraft.ChatFormatting;
 import net.minecraft.Util;
+import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.client.gui.screens.Screen;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
 import net.minecraft.core.Holder;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.chat.Component;
@@ -13,25 +16,31 @@ import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.FlintAndSteelItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.UseAnim;
+import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
+import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.fml.ModList;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.trashelemental.artificers_armory.Config;
 import net.trashelemental.artificers_armory.entity.custom.FireballEntity;
+import net.trashelemental.artificers_armory.entity.custom.PlagueRatEntity;
 import net.trashelemental.artificers_armory.junkyard_lib.util.UtilMethods;
 import net.trashelemental.artificers_armory.magic.enchantments.ModEnchantments;
 import net.trashelemental.artificers_armory.util.EnchantmentChecker;
@@ -160,6 +169,49 @@ public class FirebrandItem extends AbstractWeaponItem {
         }
 
         return InteractionResultHolder.consume(stack);
+    }
+
+    @Override
+    public InteractionResult useOn(UseOnContext pContext) {
+        Player player = pContext.getPlayer();
+        Level level = pContext.getLevel();
+        BlockPos blockpos = pContext.getClickedPos();
+        BlockState blockstate = level.getBlockState(blockpos);
+
+        if (player == null) return super.useOn(pContext);
+        if (!player.isCrouching()) return super.useOn(pContext);
+
+        if (!CampfireBlock.canLight(blockstate) && !CandleBlock.canLight(blockstate) && !CandleCakeBlock.canLight(blockstate)) {
+            BlockPos blockpos1 = blockpos.relative(pContext.getClickedFace());
+            if (BaseFireBlock.canBePlacedAt(level, blockpos1, pContext.getHorizontalDirection())) {
+                level.playSound(player, blockpos1, SoundEvents.FLINTANDSTEEL_USE, SoundSource.BLOCKS, 1.0F, level.getRandom().nextFloat() * 0.4F + 0.8F);
+                BlockState blockstate1 = BaseFireBlock.getState(level, blockpos1);
+                level.setBlock(blockpos1, blockstate1, 11);
+                level.gameEvent(player, GameEvent.BLOCK_PLACE, blockpos);
+                ItemStack itemstack = pContext.getItemInHand();
+                if (player instanceof ServerPlayer) {
+                    CriteriaTriggers.PLACED_BLOCK.trigger((ServerPlayer)player, blockpos1, itemstack);
+                    itemstack.hurtAndBreak(1, player, (p_41300_) -> {
+                        p_41300_.broadcastBreakEvent(pContext.getHand());
+                    });
+                }
+
+                return InteractionResult.sidedSuccess(level.isClientSide());
+            } else {
+                return InteractionResult.FAIL;
+            }
+        } else {
+            level.playSound(player, blockpos, SoundEvents.FLINTANDSTEEL_USE, SoundSource.BLOCKS, 1.0F, level.getRandom().nextFloat() * 0.4F + 0.8F);
+            level.setBlock(blockpos, blockstate.setValue(BlockStateProperties.LIT, Boolean.valueOf(true)), 11);
+            level.gameEvent(player, GameEvent.BLOCK_CHANGE, blockpos);
+            if (player != null) {
+                pContext.getItemInHand().hurtAndBreak(1, player, (p_41303_) -> {
+                    p_41303_.broadcastBreakEvent(pContext.getHand());
+                });
+            }
+
+            return InteractionResult.sidedSuccess(level.isClientSide());
+        }
     }
 
     @Override

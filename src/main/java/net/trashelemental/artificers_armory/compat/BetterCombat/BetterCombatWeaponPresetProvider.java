@@ -37,6 +37,21 @@ public class BetterCombatWeaponPresetProvider implements DataProvider {
         registerWeapon(ModItems.DIAMOND_FIREBRAND, "wand");
         registerWeapon(ModItems.NETHERITE_FIREBRAND, "wand");
 
+        registerWeapon(ModItems.WOOD_BLIGHT, "rapier");
+        registerWeapon(ModItems.STONE_BLIGHT, "rapier");
+        registerWeapon(ModItems.COPPER_BLIGHT, "rapier");
+        registerWeapon(ModItems.IRON_BLIGHT, "rapier");
+        registerWeapon(ModItems.GOLD_BLIGHT, "rapier");
+        registerWeapon(ModItems.DIAMOND_BLIGHT, "rapier");
+        registerWeapon(ModItems.NETHERITE_BLIGHT, "rapier");
+
+        registerWeapon(ModItems.WOOD_CENSER, "mace");
+        registerWeapon(ModItems.STONE_CENSER, "mace");
+        registerWeapon(ModItems.COPPER_CENSER, "mace");
+        registerWeapon(ModItems.IRON_CENSER, "mace");
+        registerWeapon(ModItems.GOLD_CENSER, "mace");
+        registerWeapon(ModItems.DIAMOND_CENSER, "mace");
+        registerWeapon(ModItems.NETHERITE_CENSER, "mace");
 
 
         return CompletableFuture.allOf(futures.toArray(new CompletableFuture<?>[0]));

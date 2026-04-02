@@ -28,6 +28,22 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.DIAMOND_FIREBRAND.get());
                         output.accept(ModItems.NETHERITE_FIREBRAND.get());
 
+                        output.accept(ModItems.WOOD_CENSER.get());
+                        output.accept(ModItems.STONE_CENSER.get());
+                        output.accept(ModItems.COPPER_CENSER.get());
+                        output.accept(ModItems.IRON_CENSER.get());
+                        output.accept(ModItems.GOLD_CENSER.get());
+                        output.accept(ModItems.DIAMOND_CENSER.get());
+                        output.accept(ModItems.NETHERITE_CENSER.get());
+
+                        output.accept(ModItems.WOOD_BLIGHT.get());
+                        output.accept(ModItems.STONE_BLIGHT.get());
+                        output.accept(ModItems.COPPER_BLIGHT.get());
+                        output.accept(ModItems.IRON_BLIGHT.get());
+                        output.accept(ModItems.GOLD_BLIGHT.get());
+                        output.accept(ModItems.DIAMOND_BLIGHT.get());
+                        output.accept(ModItems.NETHERITE_BLIGHT.get());
+
                         output.accept(ModItems.WOOD_SPIRIT_CANDLE.get());
                         output.accept(ModItems.STONE_SPIRIT_CANDLE.get());
                         output.accept(ModItems.COPPER_SPIRIT_CANDLE.get());

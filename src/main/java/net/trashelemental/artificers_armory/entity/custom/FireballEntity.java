@@ -8,6 +8,7 @@ import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.damagesource.DamageSource;
@@ -23,10 +24,7 @@ import net.minecraft.world.entity.projectile.AbstractHurtingProjectile;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.phys.AABB;
-import net.minecraft.world.phys.BlockHitResult;
-import net.minecraft.world.phys.EntityHitResult;
-import net.minecraft.world.phys.Vec3;
+import net.minecraft.world.phys.*;
 import net.trashelemental.artificers_armory.ArtificersArmory;
 import net.trashelemental.artificers_armory.Config;
 import net.trashelemental.artificers_armory.entity.ModEntities;
@@ -337,6 +335,27 @@ public class FireballEntity extends AbstractHurtingProjectile implements GeoEnti
             return ParticleTypes.SOUL;
         }
         return ParticleTypes.LAVA;
+    }
+
+    //Projectile Boosting from Ultrakill because why not
+    @Override
+    public boolean hurt(DamageSource source, float amount) {
+
+        Entity entity = source.getEntity();
+
+        if (entity != this.getOwner()) return false;
+
+        if (this.tickCount <= 5) {
+            if (!shouldExplode()) setShouldExplode(true);
+            setDamage((int) (damage * 1.5f));
+
+            if (this.getOwner() instanceof ServerPlayer player) {
+                UtilMethods.grantAdvancement(player, "projectile_boost");
+            }
+            return super.hurt(source, amount);
+        }
+
+        return false;
     }
 
     @Override

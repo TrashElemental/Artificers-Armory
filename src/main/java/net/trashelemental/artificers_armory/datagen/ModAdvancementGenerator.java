@@ -201,5 +201,80 @@ public class ModAdvancementGenerator implements ForgeAdvancementProvider.Advance
                 .parent(ChimeSummon)
                 .addCriterion("impossible", new ImpossibleTrigger.TriggerInstance())
                 .save(writer, new ResourceLocation(namespace, "bruiser_summon"), existingFileHelper);
+
+        Advancement CenserUse = Advancement.Builder.advancement()
+                .display(
+                        ModItems.WOOD_CENSER.get(), // Icon
+                        Component.translatable("advancements.artificers_armory.censer_use.title"), // Title
+                        Component.translatable("advancements.artificers_armory.censer_use.description"), // Description
+                        new ResourceLocation("textures/gui/advancements/backgrounds/stone.png"), // Background
+                        FrameType.GOAL, // Frame Type
+                        true, // Show Toast
+                        true, // Announce to Chat
+                        false // Hidden
+                )
+                .parent(ParentAdvancement)
+                .addCriterion("impossible", new ImpossibleTrigger.TriggerInstance())
+                .save(writer, new ResourceLocation(namespace, "censer_use"), existingFileHelper);
+
+        Advancement NetheriteCenserGet = Advancement.Builder.advancement()
+                .display(
+                        ModItems.NETHERITE_CENSER.get(), // Icon
+                        Component.translatable("advancements.artificers_armory.netherite_censer_get.title"), // Title
+                        Component.translatable("advancements.artificers_armory.netherite_censer_get.description"), // Description
+                        new ResourceLocation("textures/gui/advancements/backgrounds/stone.png"), // Background
+                        FrameType.GOAL, // Frame Type
+                        true, // Show Toast
+                        true, // Announce to Chat
+                        false // Hidden
+                )
+                .parent(CenserUse)
+                .addCriterion("has_netherite_censer", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.NETHERITE_CENSER.get()))
+                .save(writer, new ResourceLocation(namespace, "netherite_censer_get"), existingFileHelper);
+
+        Advancement BlightUse = Advancement.Builder.advancement()
+                .display(
+                        ModItems.WOOD_BLIGHT.get(), // Icon
+                        Component.translatable("advancements.artificers_armory.blight_use.title"), // Title
+                        Component.translatable("advancements.artificers_armory.blight_use.description"), // Description
+                        new ResourceLocation("textures/gui/advancements/backgrounds/stone.png"), // Background
+                        FrameType.GOAL, // Frame Type
+                        true, // Show Toast
+                        true, // Announce to Chat
+                        false // Hidden
+                )
+                .parent(ParentAdvancement)
+                .addCriterion("impossible", new ImpossibleTrigger.TriggerInstance())
+                .save(writer, new ResourceLocation(namespace, "blight_use"), existingFileHelper);
+
+        Advancement NetheriteBlightGet = Advancement.Builder.advancement()
+                .display(
+                        ModItems.NETHERITE_BLIGHT.get(), // Icon
+                        Component.translatable("advancements.artificers_armory.netherite_blight_get.title"), // Title
+                        Component.translatable("advancements.artificers_armory.netherite_blight_get.description"), // Description
+                        new ResourceLocation("textures/gui/advancements/backgrounds/stone.png"), // Background
+                        FrameType.GOAL, // Frame Type
+                        true, // Show Toast
+                        true, // Announce to Chat
+                        false // Hidden
+                )
+                .parent(BlightUse)
+                .addCriterion("has_netherite_blight", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.NETHERITE_BLIGHT.get()))
+                .save(writer, new ResourceLocation(namespace, "netherite_blight_get"), existingFileHelper);
+
+        Advancement ProjectileBoost = Advancement.Builder.advancement()
+                .display(
+                        ModItems.DIAMOND_FIREBRAND.get(), // Icon
+                        Component.translatable("advancements.artificers_armory.projectile_boost.title"), // Title
+                        Component.translatable("advancements.artificers_armory.projectile_boost.description"), // Description
+                        new ResourceLocation("textures/gui/advancements/backgrounds/stone.png"), // Background
+                        FrameType.CHALLENGE, // Frame Type
+                        true, // Show Toast
+                        true, // Announce to Chat
+                        true // Hidden
+                )
+                .parent(FirebrandShoot)
+                .addCriterion("impossible", new ImpossibleTrigger.TriggerInstance())
+                .save(writer, new ResourceLocation(namespace, "projectile_boost"), existingFileHelper);
     }
 }

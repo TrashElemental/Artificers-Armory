@@ -1,0 +1,36 @@
+{
+  "values": [
+    {
+      "id": "artificers_armory:pestilence",
+      "required": false
+    },
+    {
+      "id": "artificers_armory:ashes_ashes",
+      "required": false
+    },
+    {
+      "id": "artificers_armory:delirium",
+      "required": false
+    },
+    {
+      "id": "minecraft:mending",
+      "required": false
+    },
+    {
+      "id": "minecraft:unbreaking",
+      "required": false
+    },
+    {
+      "id": "minecraft:sharpness",
+      "required": false
+    },
+    {
+      "id": "minecraft:power",
+      "required": false
+    },
+    {
+      "id": "minecraft:bane_of_arthropods",
+      "required": false
+    }
+  ]
+}

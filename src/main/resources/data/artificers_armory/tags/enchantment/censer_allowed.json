@@ -1,0 +1,44 @@
+{
+  "values": [
+    {
+      "id": "artificers_armory:transmutation",
+      "required": false
+    },
+    {
+      "id": "artificers_armory:purifying",
+      "required": false
+    },
+    {
+      "id": "artificers_armory:dispersal",
+      "required": false
+    },
+    {
+      "id": "minecraft:mending",
+      "required": false
+    },
+    {
+      "id": "minecraft:unbreaking",
+      "required": false
+    },
+    {
+      "id": "minecraft:sharpness",
+      "required": false
+    },
+    {
+      "id": "minecraft:smite",
+      "required": false
+    },
+    {
+      "id": "minecraft:fire_aspect",
+      "required": false
+    },
+    {
+      "id": "minecraft:bane_of_arthropods",
+      "required": false
+    },
+    {
+      "id": "minecraft:power",
+      "required": false
+    }
+  ]
+}

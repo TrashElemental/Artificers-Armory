@@ -7,9 +7,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.trashelemental.artificers_armory.ArtificersArmory;
-import net.trashelemental.artificers_armory.item.custom.ChimeItem;
-import net.trashelemental.artificers_armory.item.custom.FirebrandItem;
-import net.trashelemental.artificers_armory.item.custom.SpiritCandleItem;
+import net.trashelemental.artificers_armory.item.custom.*;
 import net.trashelemental.artificers_armory.util.spirit_candle.SpiritCandleTiers;
 
 public class ModItems {
@@ -37,6 +35,52 @@ public class ModItems {
     public static final RegistryObject<Item> NETHERITE_FIREBRAND = ITEMS.register("firebrand_netherite",
             () -> new FirebrandItem(new Item.Properties().durability(1560),
                     4, 6, 20, 9, -2.8F, true, 25));
+
+
+    public static final RegistryObject<Item> WOOD_CENSER = ITEMS.register("censer_wood",
+            () -> new CenserItem(new Item.Properties().durability(60),
+                    4, -2.8F, 5, 0, 3, 100, 10));
+    public static final RegistryObject<Item> STONE_CENSER = ITEMS.register("censer_stone",
+            () -> new CenserItem(new Item.Properties().durability(120),
+                    5, -2.8F, 6, 0, 4, 100, 10));
+    public static final RegistryObject<Item> COPPER_CENSER = ITEMS.register("censer_copper",
+            () -> new CenserItem(new Item.Properties().durability(150),
+                    5, -2.8F, 6, 0, 5, 100, 15));
+    public static final RegistryObject<Item> IRON_CENSER = ITEMS.register("censer_iron",
+            () -> new CenserItem(new Item.Properties().durability(210),
+                    6, -2.8F, 7, 1, 5, 100, 15));
+    public static final RegistryObject<Item> GOLD_CENSER = ITEMS.register("censer_gold",
+            () -> new CenserItem(new Item.Properties().durability(50),
+                    5, -2.6F, 8, 1, 7, 50, 30));
+    public static final RegistryObject<Item> DIAMOND_CENSER = ITEMS.register("censer_diamond",
+            () -> new CenserItem(new Item.Properties().durability(1200),
+                    7, -2.8F, 9, 2, 8, 100, 20));
+    public static final RegistryObject<Item> NETHERITE_CENSER = ITEMS.register("censer_netherite",
+            () -> new CenserItem(new Item.Properties().durability(1560),
+                    8, -2.8F, 10, 3, 10, 100, 25));
+
+
+    public static final RegistryObject<Item> WOOD_BLIGHT = ITEMS.register("blight_wood",
+            () -> new BlightItem(new Item.Properties().durability(60),
+                    2, -2.2F, 1, 5, 80, 10, 0.2f));
+    public static final RegistryObject<Item> STONE_BLIGHT = ITEMS.register("blight_stone",
+            () -> new BlightItem(new Item.Properties().durability(120),
+                    3, -2.2F,  1, 7, 80, 10, 0.3f));
+    public static final RegistryObject<Item> COPPER_BLIGHT = ITEMS.register("blight_copper",
+            () -> new BlightItem(new Item.Properties().durability(150),
+                    3, -2.2F, 2, 7, 80, 15, 0.4f));
+    public static final RegistryObject<Item> IRON_BLIGHT = ITEMS.register("blight_iron",
+            () -> new BlightItem(new Item.Properties().durability(210),
+                    4, -2.2F,  2, 10, 80, 15, 0.5f));
+    public static final RegistryObject<Item> GOLD_BLIGHT = ITEMS.register("blight_gold",
+            () -> new BlightItem(new Item.Properties().durability(50),
+                    3, -2F, 3, 11, 40, 30, 0.6f));
+    public static final RegistryObject<Item> DIAMOND_BLIGHT = ITEMS.register("blight_diamond",
+            () -> new BlightItem(new Item.Properties().durability(1200),
+                    5, -2.2F, 3, 12, 80, 20, 0.7f));
+    public static final RegistryObject<Item> NETHERITE_BLIGHT = ITEMS.register("blight_netherite",
+            () -> new BlightItem(new Item.Properties().durability(1560),
+                    6, -2.2F,  4, 13, 80, 25, 0.8f));
 
 
     public static final RegistryObject<Item> WOOD_SPIRIT_CANDLE = ITEMS.register("spirit_candle_wood",

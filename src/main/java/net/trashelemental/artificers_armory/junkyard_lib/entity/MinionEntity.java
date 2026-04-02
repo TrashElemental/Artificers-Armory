@@ -61,13 +61,11 @@ public class MinionEntity extends TamableAnimal {
 
     public static AttributeSupplier.Builder createAttributes() {
         return Animal.createLivingAttributes()
-
-                .add(Attributes.MAX_HEALTH, 4)
+                .add(Attributes.MAX_HEALTH, 1)
                 .add(Attributes.MOVEMENT_SPEED, 0.3)
-                .add(Attributes.ATTACK_DAMAGE, 5)
+                .add(Attributes.ATTACK_DAMAGE, 1)
                 .add(Attributes.FOLLOW_RANGE, 16)
                 .add(Attributes.ATTACK_KNOCKBACK, 0);
-
     }
 
     /**
@@ -132,7 +130,7 @@ public class MinionEntity extends TamableAnimal {
     @Override
     public void onAddedToWorld() {
         super.onAddedToWorld();
-        ParticleMethods.ParticlesAround(this.level(), spawnParticles, this, 10, 0.5);
+        ParticleMethods.ParticlesAround(this.level(), spawnParticles, this, 4, 0.5);
     }
 
 

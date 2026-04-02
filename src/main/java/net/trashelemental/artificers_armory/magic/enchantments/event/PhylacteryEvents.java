@@ -85,7 +85,7 @@ public class PhylacteryEvents {
         InteractionHand hand =
                 player.getMainHandItem() == stack ? InteractionHand.MAIN_HAND : InteractionHand.OFF_HAND;
         stack.hurtAndBreak(20, player, p -> p.broadcastBreakEvent(hand));
-        player.getCooldowns().addCooldown(stack.getItem(), 100);
+        player.getCooldowns().addCooldown(stack.getItem(), 3000);
 
 
         // vfx

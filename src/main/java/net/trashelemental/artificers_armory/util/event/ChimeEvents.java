@@ -1,7 +1,6 @@
 package net.trashelemental.artificers_armory.util.event;
 
 import net.minecraft.ChatFormatting;
-import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.server.level.ServerLevel;
@@ -15,13 +14,11 @@ import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.entity.projectile.ProjectileUtil;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.ClipContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.AABB;
-import net.minecraft.world.phys.EntityHitResult;
 import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.Vec3;
 import net.trashelemental.artificers_armory.entity.ModEntities;
@@ -320,7 +317,7 @@ public class ChimeEvents {
                 player.getBoundingBox().inflate(8), e -> FirebrandEvents.isAlly(player, e));
 
         for (LivingEntity ally : allies) {
-            UtilMethods.applyEffectNoParticles(ally, ModMobEffects.TEAMWORK.get(), duration, amplifier);
+            UtilMethods.applyEffectNoParticles(ally, ModMobEffects.BLESSING.get(), duration, amplifier);
             ally.heal(chime.supportLevel * 2);
             ParticleMethods.ParticlesAroundServerSide(player.level(), ParticleTypes.HAPPY_VILLAGER,
                     ally.getX(), ally.getEyeY(), ally.getZ(), 4, 1.5);

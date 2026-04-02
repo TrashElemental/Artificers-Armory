@@ -7,6 +7,7 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.trashelemental.artificers_armory.ArtificersArmory;
 import net.trashelemental.artificers_armory.entity.custom.FamiliarEntity;
+import net.trashelemental.artificers_armory.entity.custom.PlagueRatEntity;
 import net.trashelemental.artificers_armory.entity.custom.WispEntity;
 import net.trashelemental.artificers_armory.entity.custom.necromancy.*;
 
@@ -23,6 +24,7 @@ public class ModEventBusEvents {
         event.put(ModEntities.WITHER_SKELETON_MINION.get(), WitherSkeletonMinionEntity.createAttributes().build());
         event.put(ModEntities.FAMILIAR.get(), FamiliarEntity.createAttributes().build());
         event.put(ModEntities.WISP.get(), WispEntity.createAttributes().build());
+        event.put(ModEntities.PLAGUE_RAT.get(), PlagueRatEntity.createAttributes().build());
     }
 
     @SubscribeEvent

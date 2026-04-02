@@ -45,6 +45,22 @@ public class ModItemModelProvider extends ItemModelProvider {
         handheldItem(ModItems.DIAMOND_CHIME);
         handheldItem(ModItems.NETHERITE_CHIME);
 
+        firebrandItem(ModItems.WOOD_CENSER);
+        firebrandItem(ModItems.STONE_CENSER);
+        firebrandItem(ModItems.COPPER_CENSER);
+        firebrandItem(ModItems.IRON_CENSER);
+        firebrandItem(ModItems.GOLD_CENSER);
+        firebrandItem(ModItems.DIAMOND_CENSER);
+        firebrandItem(ModItems.NETHERITE_CENSER);
+
+        blightItem(ModItems.WOOD_BLIGHT);
+        blightItem(ModItems.STONE_BLIGHT);
+        blightItem(ModItems.COPPER_BLIGHT);
+        blightItem(ModItems.IRON_BLIGHT);
+        blightItem(ModItems.GOLD_BLIGHT);
+        blightItem(ModItems.DIAMOND_BLIGHT);
+        blightItem(ModItems.NETHERITE_BLIGHT);
+
     }
 
     private ItemModelBuilder simpleItem(RegistryObject<Item> item) {
@@ -78,6 +94,12 @@ public class ModItemModelProvider extends ItemModelProvider {
     private ItemModelBuilder spiritCandleItem(RegistryObject<Item> item) {
         return withExistingParent(item.getId().getPath(),
                 new ResourceLocation(ArtificersArmory.MOD_ID, "item/spirit_candle")).texture("layer0",
+                new ResourceLocation(ArtificersArmory.MOD_ID, "item/" + item.getId().getPath()));
+    }
+
+    private ItemModelBuilder blightItem(RegistryObject<Item> item) {
+        return withExistingParent(item.getId().getPath(),
+                new ResourceLocation(ArtificersArmory.MOD_ID, "item/blight")).texture("layer0",
                 new ResourceLocation(ArtificersArmory.MOD_ID, "item/" + item.getId().getPath()));
     }
 }

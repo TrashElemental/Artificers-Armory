@@ -1,6 +1,5 @@
 package net.trashelemental.artificers_armory.entity;
 
-import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -8,12 +7,8 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.trashelemental.artificers_armory.ArtificersArmory;
-import net.trashelemental.artificers_armory.entity.custom.FamiliarEntity;
-import net.trashelemental.artificers_armory.entity.custom.FireballEntity;
-import net.trashelemental.artificers_armory.entity.custom.SkeletonPriestEntity;
-import net.trashelemental.artificers_armory.entity.custom.WispEntity;
+import net.trashelemental.artificers_armory.entity.custom.*;
 import net.trashelemental.artificers_armory.entity.custom.necromancy.*;
-import software.bernie.example.registry.EntityRegistry;
 
 public class ModEntities {
     public static final DeferredRegister<EntityType<?>> ENTITY_TYPES =
@@ -28,6 +23,10 @@ public class ModEntities {
             ENTITY_TYPES.register("fireball",
                     () -> EntityType.Builder.<FireballEntity>of(FireballEntity::new, MobCategory.MISC)
                             .sized(0.3f, 0.3f).build("fireball"));
+    public static final RegistryObject<EntityType<PotionCloudEntity>> POTION_CLOUD_ENTITY =
+            ENTITY_TYPES.register("potion_cloud",
+                    () -> EntityType.Builder.<PotionCloudEntity>of(PotionCloudEntity::new, MobCategory.MISC)
+                            .sized(0.3f, 0.3f).build("potion_cloud"));
 
     // Minions
     public static final RegistryObject<EntityType<ZombieMinionEntity>> ZOMBIE_MINION =
@@ -55,6 +54,9 @@ public class ModEntities {
             ENTITY_TYPES.register("skeleton_priest",
                     () -> EntityType.Builder.of(SkeletonPriestEntity::new, MobCategory.MISC)
                             .sized(0.3f, 0.3f).build("skeleton_priest"));
+    public static final RegistryObject<EntityType<PlagueRatEntity>> PLAGUE_RAT =
+            ENTITY_TYPES.register("plague_rat", () -> EntityType.Builder.of(
+                    PlagueRatEntity::new, MobCategory.CREATURE).sized(0.35f, 0.6F).build("plague_rat"));
 
 
 

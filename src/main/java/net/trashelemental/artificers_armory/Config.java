@@ -27,6 +27,12 @@ public class Config
     public static final ForgeConfigSpec.BooleanValue SUPPORT_OTHER_PLAYERS = BUILDER
             .comment("Should certain effects from this mod that are meant to support allies affect other players? By default, these effects will try not to support players that you are actively fighting.")
             .define("Support effects apply to non-hostile players:", true);
+    public static final ForgeConfigSpec.BooleanValue ENCHANTMENTS_TRADABLE = BUILDER
+            .comment("Should enchantments from this mod be found in villager trades? (Note: This mod adds a lot of item-specific enchantments, so leaving this true might pollute pools with mostly useless enchantments.)")
+            .define("Artificer's Armory enchantments are tradeable:", true);
+    public static final ForgeConfigSpec.BooleanValue ENCHANTMENTS_ON_BOOKS = BUILDER
+            .comment("Should Should enchantments from this mod be found on books? (Note: This mod adds a lot of item-specific enchantments, so leaving this true might pollute pools with mostly useless enchantments.)")
+            .define("Artificer's Armory enchantments are found on books:", true);
 
 
     public static final ForgeConfigSpec.BooleanValue ISS_COMPAT = BUILDER

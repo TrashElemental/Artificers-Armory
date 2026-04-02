@@ -9,7 +9,7 @@ import net.trashelemental.artificers_armory.ArtificersArmory;
 
 public class GrimHarvestEffect extends MobEffect {
     public GrimHarvestEffect() {
-        super(MobEffectCategory.BENEFICIAL, 0x4AECD9);
+        super(MobEffectCategory.BENEFICIAL, 4125138);
 
         this.addAttributeModifier(
                 Attributes.ATTACK_DAMAGE,

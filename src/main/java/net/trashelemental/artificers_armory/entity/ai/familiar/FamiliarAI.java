@@ -135,13 +135,13 @@ public class FamiliarAI {
         evaluateSurroundings(familiar);
 
         float abilityChance = 0.5f;
-        if (familiar.getRole() == FamiliarRole.HEALER || familiar.getRole() == FamiliarRole.PRANKSTER) abilityChance = 0.8f;
+        if (familiar.getRole() != FamiliarRole.NONE) abilityChance = 0.8f;
 
         if (random.nextFloat() < abilityChance) {
             if (FamiliarEventHandlers.tryCombatAbility(familiar)) {
-                if (familiar.getRole() == FamiliarRole.HEALER || familiar.getRole() == FamiliarRole.PRANKSTER) {
-                    familiar.setCombatCooldown(randomBetween(familiar, 100, 160)); // 5-8 sec
-                } else familiar.setCombatCooldown(randomBetween(familiar, 120, 180)); // 6-9 sec
+                if (familiar.getRole() == FamiliarRole.HEALER || familiar.getRole() == FamiliarRole.PRANKSTER || familiar.getRole() == FamiliarRole.BRUISER) {
+                    familiar.setCombatCooldown(randomBetween(familiar, 80, 120)); // 4-6 sec
+                } else familiar.setCombatCooldown(randomBetween(familiar, 100, 140)); // 5-7 sec
             }
         } else {
             familiar.setCombatCooldown(randomBetween(familiar, 80, 120)); // 4-6 sec

@@ -5,6 +5,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
+import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.level.block.Block;
@@ -22,6 +23,10 @@ public class ModTags {
                 TagKey.create(Registries.ENCHANTMENT, new ResourceLocation(ArtificersArmory.MOD_ID,"spirit_candle_allowed"));
         public static final TagKey<Enchantment> CHIME_ALLOWED =
                 TagKey.create(Registries.ENCHANTMENT, new ResourceLocation(ArtificersArmory.MOD_ID,"chime_allowed"));
+        public static final TagKey<Enchantment> CENSER_ALLOWED =
+                TagKey.create(Registries.ENCHANTMENT, new ResourceLocation(ArtificersArmory.MOD_ID,"censer_allowed"));
+        public static final TagKey<Enchantment> BLIGHT_ALLOWED =
+                TagKey.create(Registries.ENCHANTMENT, new ResourceLocation(ArtificersArmory.MOD_ID,"blight_allowed"));
 
     }
 
@@ -41,6 +46,15 @@ public class ModTags {
 
         private static TagKey<Item> tag(String name) {
             return ItemTags.create(new ResourceLocation(ArtificersArmory.MOD_ID, name));
+        }
+    }
+
+    public static class Entities {
+
+        public static final TagKey<EntityType<?>> PLAGUE_IMMUNE = tag("plague_immune");
+
+        private static TagKey<EntityType<?>> tag(String name) {
+            return TagKey.create(Registries.ENTITY_TYPE, new ResourceLocation(ArtificersArmory.MOD_ID, name));
         }
     }
 

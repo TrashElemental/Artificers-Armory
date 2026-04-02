@@ -6,10 +6,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.trashelemental.artificers_armory.ArtificersArmory;
-import net.trashelemental.artificers_armory.magic.effects.custom.EmpoweredEffect;
-import net.trashelemental.artificers_armory.magic.effects.custom.GrimHarvestEffect;
-import net.trashelemental.artificers_armory.magic.effects.custom.SoulBurnEffect;
-import net.trashelemental.artificers_armory.magic.effects.custom.TeamworkEffect;
+import net.trashelemental.artificers_armory.magic.effects.custom.*;
 
 public class ModMobEffects {
 
@@ -20,7 +17,12 @@ public class ModMobEffects {
     public static final RegistryObject<MobEffect> EMPOWERED = REGISTRY.register("empowered", EmpoweredEffect::new);
     public static final RegistryObject<MobEffect> GRIM_HARVEST = REGISTRY.register("grim_harvest", GrimHarvestEffect::new);
 
-    public static final RegistryObject<MobEffect> TEAMWORK = REGISTRY.register("teamwork", TeamworkEffect::new);
+    public static final RegistryObject<MobEffect> BLESSING = REGISTRY.register("blessing", BlessingEffect::new);
+
+    public static final RegistryObject<MobEffect> PLAGUE = REGISTRY.register("plague", PlagueEffect::new);
+    public static final RegistryObject<MobEffect> PESTILENCE = REGISTRY.register("pestilence", PestilenceEffect::new);
+    public static final RegistryObject<MobEffect> BLACK_DEATH = REGISTRY.register("black_death", BlackDeathEffect::new);
+    public static final RegistryObject<MobEffect> DELIRIUM = REGISTRY.register("delirium", DeliriumEffect::new);
 
 
     public static void register(IEventBus eventBus) {

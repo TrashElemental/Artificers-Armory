@@ -26,7 +26,7 @@ public class AreaAttackTask implements FamiliarTask {
 
     @Override
     public boolean canRun(FamiliarEntity familiar) {
-        if (familiar.getLevel() < 5) return false;
+        if (familiar.getLevel() < 4) return false;
         if (familiar.getRole() == FamiliarRole.PRANKSTER) return false;
         if (familiar.getRole() == FamiliarRole.HEALER) return false;
         if (!(familiar.getOwner() instanceof Player owner)) return false;

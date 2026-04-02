@@ -96,6 +96,8 @@ public class ArtificersArmory
             EntityRenderers.register(ModEntities.SKELETON_PRIEST.get(), SkeletonPriestRenderer::new);
             EntityRenderers.register(ModEntities.FAMILIAR.get(), FamiliarRenderer::new);
             EntityRenderers.register(ModEntities.WISP.get(), WispRenderer::new);
+            EntityRenderers.register(ModEntities.PLAGUE_RAT.get(), PlagueRatRenderer::new);
+            EntityRenderers.register(ModEntities.POTION_CLOUD_ENTITY.get(), PotionCloudRenderer::new);
 
         }
     }

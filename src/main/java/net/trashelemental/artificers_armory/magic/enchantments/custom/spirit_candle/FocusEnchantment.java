@@ -4,6 +4,7 @@ import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.EnchantmentCategory;
+import net.trashelemental.artificers_armory.Config;
 import net.trashelemental.artificers_armory.item.custom.SpiritCandleItem;
 
 public class FocusEnchantment extends Enchantment {
@@ -18,8 +19,14 @@ public class FocusEnchantment extends Enchantment {
 
     @Override
     public boolean isTradeable() {
-        return false;
+        return Config.ENCHANTMENTS_TRADABLE.get();
     }
+
+    @Override
+    public boolean isAllowedOnBooks() {
+        return Config.ENCHANTMENTS_ON_BOOKS.get();
+    }
+
 
     @Override
     public boolean canEnchant(ItemStack item) {
